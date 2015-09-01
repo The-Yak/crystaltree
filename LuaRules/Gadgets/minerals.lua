@@ -1,8 +1,8 @@
 function gadget:GetInfo()
 	return {
 		name = "we require more minerals",
-		desc = "Renders minerals",
-		author = "trepan, sprung",
+		desc = "Renders minerals, purple edition",
+		author = "trepan, sprung, The_Yak",
 		date = "15/7/07 - 15/1/13",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
