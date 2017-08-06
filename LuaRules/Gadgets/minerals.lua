@@ -1,9 +1,9 @@
 function gadget:GetInfo()
 	return {
-		name = "we require more minerals",
+		name = "we require more minerals v1.1",
 		desc = "Renders minerals, purple edition",
 		author = "trepan, sprung, The_Yak",
-		date = "15/7/07 - 15/1/13",
+		date = "15/7/07 - 5/25/2017",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
 		enabled = true,
@@ -47,7 +47,7 @@ else
 	local glGetShaderLog         = gl.GetShaderLog
 	local glLighting             = gl.Lighting
 	local glPolygonOffset        = gl.PolygonOffset
-	local glSmoothing            = gl.Smoothing
+	--local glSmoothing            = gl.Smoothing
 	local glUseShader            = gl.UseShader
 	local spEcho                 = Spring.Echo
 	local spGetAllFeatures       = Spring.GetAllFeatures
@@ -118,7 +118,7 @@ else
 	function gadget:DrawWorld()
 		glColor(0.5, 0.2, 1)
 		if (shader) then
-			glSmoothing(nil, nil, true)
+			--glSmoothing(nil, nil, true)
 			glUseShader(shader)
 			glDepthTest(true)
 			glBlending(GL_SRC_ALPHA, GL_ONE)
@@ -130,11 +130,11 @@ else
 			
 			glUseShader(0)
 			glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-			glSmoothing(nil, nil, false)
+			--glSmoothing(nil, nil, false)
 		else
 			glDepthTest(GL_LEQUAL)
 			glPolygonOffset(-10, -10)
-			glColor(0,1,1,0.3)
+			glColor(0.5, 0.2, 1)
 
 			for _, fID in ipairs(spGetAllFeatures()) do
 				if (spGetFeatureDefID(fID) == minerals_FDefID) then glFeature(fID, true) end
